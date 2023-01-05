@@ -5,6 +5,8 @@ import user from "../assets/user.svg"
 const form = document.querySelector("form")
 const chatContainer = document.querySelector("#chat_container")
 
+console.log(import.meta.env.VITE_SERVER_URL)
+
 
 let loadInterval: any
 
