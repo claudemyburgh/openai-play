@@ -1,0 +1,65 @@
+{
+  "name": "vanilla-headless",
+  "version": "0.9.3",
+  "description": "Inspired by HeadlessUi, Vanilla Headless is Web Component library that adds interactive with keyboard and mouse events",
+  "license": "MIT",
+  "repository": "https://github.com/DesignByCode/vanilla-headless.git",
+  "bugs": {
+    "url": "https://github.com/DesignByCode/vanilla-headless/issues"
+  },
+  "homepage": "https://github.com/DesignByCode/vanilla-headless/#readme",
+  "author": "designbycode",
+  "keywords": [
+    "headlessui",
+    "popover",
+    "dropdown",
+    "dropdown-select",
+    "navigation toggle"
+  ],
+  "type": "commonjs",
+  "main": "build/index.js",
+  "scripts": {
+    "prebuild": "npm run clean",
+    "build": "node ./esbuild.config.js",
+    "clean": "rd /s /q esm dist lib build .cache>nul 2>&1|echo.>nul",
+    "dev": "node ./esbuild.config.js",
+    "precommit": "npm run test && lint-staged",
+    "test": "jest",
+    "test:watch": "npm run test -- --watch"
+  },
+  "lint-staged": {
+    "src/**/*.ts": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "browserslist": [
+    "> .5% or last 2 versions"
+  ],
+  "jest": {
+    "moduleFileExtensions": [
+      "ts",
+      "js"
+    ],
+    "transform": {
+      ".ts": "<rootDir>/node_modules/ts-jest/preprocessor.js"
+    }
+  },
+  "dependencies": {
+    "@popperjs/core": "^2.11.6",
+    "vanilla-headless": "^0.8.0"
+  },
+  "devDependencies": {
+    "@types/jest": "^29.1.1",
+    "@typescript-eslint/eslint-plugin": "^5.38.1",
+    "@typescript-eslint/parser": "^5.38.1",
+    "chokidar": "^3.5.3",
+    "esbuild": "^0.16.7",
+    "eslint": "^8.24.0",
+    "husky": "^8.0.1",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^2.7.1",
+    "ts-loader": "^9.4.1",
+    "typescript": "^4.6.4"
+  }
+}

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chat</title>
+  </head>
+  <body class="bg-gray-800 text-white min-h-screen h-full">
+    <div id="app" class="wrapper flex flex-col h-full flex-1">
+      <div id="chat_container" class="flex flex-1 shrink-0 flex-col p-5 space-y-4">
+
+      </div>
+      <form  class="w-full flex space-x-2 my-10">
+        <label for="prompt" class="sr-only">Prompt</label>
+        <textarea class="w-full rounded-md min-h-[45px] focus:ring-2 border border-primary-500 focus:ring-primary-500 bg-gray-900 text-gray-100 shadow-md shadow-black" name="prompt" id="prompt"  rows="1" placeholder="Ask Codex..."></textarea>
+        <button type="submit" class="border-2 bg-primary-500 border-primary-500 uppercase text-gray-900 rounded-md px-6">
+          send
+        </button>
+      </form>
+
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
