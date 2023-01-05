@@ -51,7 +51,7 @@ function chatStripe(isAi: boolean, value: any, uniqueId: string) {
   `
 }
 
-const handleSubmit = async (e) => {
+const handleSubmit = async (e: any) => {
   e.preventDefault()
 
   const formData = new FormData(form!)
